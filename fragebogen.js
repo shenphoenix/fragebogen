@@ -272,6 +272,12 @@ if(selected)
 	  type: 'fragebogenSubmit',
 	  payload: { email, vorname, nachname, tel, message /* zusammengebaut wie gehabt */ }
 	}, '*');
+	// optional auf Ergebnis warten
+window.addEventListener('message', (e) => {
+  if (e.data?.type === 'sendResult') {
+    alert(e.data.ok ? 'E-Mail versendet!' : 'Senden fehlgeschlagen.');
+  }
+});
 }
 
 	
@@ -285,5 +291,6 @@ function sendHeight() {
 // Beim Laden und nach Änderungen neu senden
 window.addEventListener("load", sendHeight);
 new ResizeObserver(sendHeight).observe(document.body);
+
 
 
