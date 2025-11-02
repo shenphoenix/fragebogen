@@ -267,30 +267,11 @@ if(selected)
   message += `Telefon: ${tel}\n`;
 
   console.log("Gesendete Nachricht:\n" + message);
-/*
-  // === Example send to backend (replace with your email logic) ===
-  const TO_EMAIL = "deineadresse@example.com"; // your target
-  const payload = {
-    to: TO_EMAIL,
-    subject: "Neue Fragebogen-Antwort",
-    text: message,
-  };
-
-  try {
-    const res = await fetch("/api/send-email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    if (res.ok) {
-      alert("Danke! Ihre Antworten wurden gesendet.");
-    } else {
-      alert("Fehler beim Senden der E-Mail.");
-    }
-  } catch (err) {
-    console.error(err);
-    alert("Verbindungsfehler beim Senden.");
-  }*/
+	// im iFrame
+	window.parent.postMessage({
+	  type: 'fragebogenSubmit',
+	  payload: { email, vorname, nachname, tel, message /* zusammengebaut wie gehabt */ }
+	}, '*');
 }
 
 	
@@ -304,3 +285,4 @@ function sendHeight() {
 // Beim Laden und nach Änderungen neu senden
 window.addEventListener("load", sendHeight);
 new ResizeObserver(sendHeight).observe(document.body);
+
