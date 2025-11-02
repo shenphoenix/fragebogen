@@ -1,0 +1,706 @@
+{
+  "title": "Deutscher Pass Kostenloser Test ",
+  "question": {
+    "1": {
+      "question": "Seit wann sind sie in Deutschland?",
+      "target": "custom",
+      "answers": {
+        "1": {
+          "answer": "Ich bin in Deutschland geboren",
+          "target": "default"
+        },
+        "2": {
+          "answer": "vor 2016",
+          "target": "default"
+        },
+        "3": {
+          "answer": "2016",
+          "target": "default"
+        },
+        "4": {
+          "answer": "2017",
+          "target": "default"
+        },
+        "5": {
+          "answer": "2018",
+          "target": "default"
+        },
+        "6": {
+          "answer": "2019",
+          "target": "default"
+        },
+        "7": {
+          "answer": "2020",
+          "target": "default"
+        },
+        "8": {
+          "answer": "2021",
+          "target": "default"
+        },
+        "9": {
+          "answer": "2022",
+          "target": "end"
+        },
+        "10": {
+          "answer": "2023",
+          "target": "end"
+        },
+        "11": {
+          "answer": "2024",
+          "target": "end"
+        },
+        "12": {
+          "answer": "2025",
+          "target": "end"
+        }
+      }
+    },
+    "2": {
+      "question": "Haben sie einen Bildungsabschluss",
+      "target": "default",
+      "answers": {
+        "1": {
+          "answer": "9.Klasse Schulabschluss",
+          "target": "default"
+        },
+        "2": {
+          "answer": "10.Klasse Schulabschluss",
+          "target": "default"
+        },
+        "3": {
+          "answer": "Abitur oder Fachabitur",
+          "target": "default"
+        },
+        "4": {
+          "answer": "Ausbildung",
+          "target": "default"
+        },
+        "5": {
+          "answer": "Studium",
+          "target": "default"
+        },
+        "6": {
+          "answer": "Nein",
+          "target": "default"
+        }
+      }
+    },
+    "3": {
+      "question": "Haben sie Ihren Abschluss in Deutschland gemacht?",
+      "target": "default",
+      "answers": {
+        "1": {
+          "answer": "Ja",
+          "target": "default"
+        },
+        "2": {
+          "answer": "Nein",
+          "target": "default"
+        }
+      }
+    },
+    "4": {
+      "question": "Haben Sie ein Deutsches Sprachzertifikat gemacht?",
+      "target": "default",
+      "answers": {
+        "1": {
+          "answer": "A1",
+          "target": "default"
+        },
+        "2": {
+          "answer": "A2",
+          "target": "default"
+        },
+        "3": {
+          "answer": "B1",
+          "target": "default"
+        },
+        "4": {
+          "answer": "B2",
+          "target": "default"
+        },
+        "5": {
+          "answer": "C1",
+          "target": "default"
+        },
+        "6": {
+          "answer": "C2",
+          "target": "default"
+        },
+        "7": {
+          "answer": "Nein",
+          "target": "default"
+        }
+      }
+    },
+    "5": {
+      "question": "Haben Sie den Einbürgerungstest bestanden?",
+      "target": "default",
+      "answers": {
+        "1": {
+          "answer": "Ja",
+          "target": "default"
+        },
+        "2": {
+          "answer": "Nein",
+          "target": "default"
+        }
+      }
+    },
+    "6": {
+      "question": "Haben Sie einen gültigen Nationalpass aus Ihrem Herkunftsland?",
+      "target": "custom",
+      "answers": {
+        "1": {
+          "answer": "Ja",
+          "target": "default"
+        },
+        "2": {
+          "answer": "Nein",
+          "target": "end"
+        }
+      }
+    },
+    "7": {
+      "question": "Aus welchem Land kommen Sie?",
+      "target": "custom",
+      "answers": {
+        "1": {
+          "answer": "Afghanistan",
+          "target": "default"
+        },
+        "2": {
+          "answer": "Syrien",
+          "target": "default"
+        },
+        "3": {
+          "answer": "Eritrea",
+          "target": "end"
+        },
+        "4": {
+          "answer": "Somalia",
+          "target": "end"
+        },
+        "5": {
+          "answer": "Ich komme aus einem anderem Land",
+          "target": "default"
+        }
+      }
+    },
+    "8": {
+      "question": "Sind sie Verheiratet?",
+      "target": "default",
+      "answers": {
+        "1": {
+          "answer": "Ja",
+          "target": "default"
+        },
+        "2": {
+          "answer": "Nein",
+          "target": "default"
+        },
+        "3": {
+          "answer": "Geschieden",
+          "target": "default"
+        },
+        "4": {
+          "answer": "Verwitwet",
+          "target": "default"
+        }
+      }
+    },
+    "9": {
+      "question": "Haben sie einen Deutschen Ehepartner?",
+      "target": "default",
+      "answers": {
+        "1": {
+          "answer": "Ja",
+          "target": "default"
+        },
+        "2": {
+          "answer": "Nein",
+          "target": "default"
+        }
+      }
+    },
+    "10": {
+      "question": "Wieviele Kinder haben Sie?",
+      "target": "default",
+      "answers": {
+        "1": {
+          "answer": "1",
+          "target": "default"
+        },
+        "2": {
+          "answer": "2",
+          "target": "default"
+        },
+        "3": {
+          "answer": "3",
+          "target": "default"
+        },
+        "4": {
+          "answer": "4",
+          "target": "default"
+        },
+        "5": {
+          "answer": "5",
+          "target": "default"
+        },
+        "6": {
+          "answer": "6",
+          "target": "default"
+        },
+        "7": {
+          "answer": "7",
+          "target": "default"
+        },
+        "8": {
+          "answer": "8",
+          "target": "default"
+        },
+        "9": {
+          "answer": "9",
+          "target": "default"
+        },
+        "10": {
+          "answer": "10",
+          "target": "default"
+        }
+      }
+    },
+    "11": {
+      "question": "Wie viel verdienen Sie aktuell im Monat (netto)?",
+      "target": "default",
+      "answers": {
+        "1": {
+          "answer": "0€-600€",
+          "target": "default"
+        },
+        "2": {
+          "answer": "600€-1000€",
+          "target": "default"
+        },
+        "3": {
+          "answer": "1000€-1500€",
+          "target": "default"
+        },
+        "4": {
+          "answer": "1500€-2000€",
+          "target": "default"
+        },
+        "5": {
+          "answer": "2000€-2500€",
+          "target": "default"
+        },
+        "6": {
+          "answer": "2500€-3000€",
+          "target": "default"
+        },
+        "7": {
+          "answer": "3000€-3500€",
+          "target": "default"
+        },
+        "8": {
+          "answer": "Über 3500€",
+          "target": "default"
+        }
+      }
+    },
+    "12": {
+      "question": "Erhalten Sie Geld vom Jobcenter?",
+      "target": "custom",
+      "answers": {
+        "1": {
+          "answer": "Ja",
+          "target": "end"
+        },
+        "2": {
+          "answer": "Nein",
+          "target": "default"
+        }
+      }
+    },
+    "13": {
+      "question": "Haben Sie gerade eine Duldung?",
+      "target": "custom",
+      "answers": {
+        "1": {
+          "answer": "Ja",
+          "target": "end"
+        },
+        "2": {
+          "answer": "Nein",
+          "target": "default"
+        }
+      }
+    },
+    "14": {
+      "question": "Welchen Aufenthaltstitel haben Sie aktuell?",
+      "target": "custom",
+      "answers": {
+        "1": {
+          "answer": "Niederlassungserlaubnis",
+          "target": "default"
+        },
+        "2": {
+          "answer": "EU Bürger oder 5 FreizügG/ EU",
+          "target": "default"
+        },
+        "3": {
+          "answer": "7",
+          "target": "default"
+        },
+        "4": {
+          "answer": "§16a",
+          "target": "end"
+        },
+        "5": {
+          "answer": "§16b",
+          "target": "end"
+        },
+        "6": {
+          "answer": "§16c",
+          "target": "end"
+        },
+        "7": {
+          "answer": "§16d",
+          "target": "end"
+        },
+        "8": {
+          "answer": "§16e",
+          "target": "end"
+        },
+        "9": {
+          "answer": "§16f",
+          "target": "end"
+        },
+        "10": {
+          "answer": "§17",
+          "target": "end"
+        },
+        "11": {
+          "answer": "§18a",
+          "target": "default"
+        },
+        "12": {
+          "answer": "§18b Abs.1",
+          "target": "default"
+        },
+        "13": {
+          "answer": "§18d",
+          "target": "default"
+        },
+        "14": {
+          "answer": "§18e",
+          "target": "default"
+        },
+        "15": {
+          "answer": "§18f",
+          "target": "default"
+        },
+        "16": {
+          "answer": "§18g",
+          "target": "default"
+        },
+        "17": {
+          "answer": "§19",
+          "target": "default"
+        },
+        "18": {
+          "answer": "§19a",
+          "target": "default"
+        },
+        "19": {
+          "answer": "§19b",
+          "target": "default"
+        },
+        "20": {
+          "answer": "§19c",
+          "target": "default"
+        },
+        "21": {
+          "answer": "§19d",
+          "target": "default"
+        },
+        "22": {
+          "answer": "§19e",
+          "target": "default"
+        },
+        "23": {
+          "answer": "§20",
+          "target": "default"
+        },
+        "24": {
+          "answer": "§21",
+          "target": "default"
+        },
+        "25": {
+          "answer": "§22",
+          "target": "default"
+        },
+        "26": {
+          "answer": "§23 Abs.1",
+          "target": "default"
+        },
+        "27": {
+          "answer": "§23 Abs.2",
+          "target": "default"
+        },
+        "28": {
+          "answer": "§23a",
+          "target": "default"
+        },
+        "29": {
+          "answer": "§24",
+          "target": "end"
+        },
+        "30": {
+          "answer": "§25 Abs.1",
+          "target": "default"
+        },
+        "31": {
+          "answer": "§25 Abs.2 (3) Flüchtlingseigenschaft",
+          "target": "default"
+        },
+        "32": {
+          "answer": "§25 Abs.2 (4) Subsidiärer Schutz",
+          "target": "default"
+        },
+        "33": {
+          "answer": "§25 Abs.3 Abschiebungsverbot",
+          "target": "default"
+        },
+        "34": {
+          "answer": "§25 Abs.4",
+          "target": "default"
+        },
+        "35": {
+          "answer": "§25 Abs.4a",
+          "target": "default"
+        },
+        "36": {
+          "answer": "§25 Abs.4b",
+          "target": "default"
+        },
+        "37": {
+          "answer": "§25 Abs.5",
+          "target": "default"
+        },
+        "38": {
+          "answer": "§25a",
+          "target": "default"
+        },
+        "39": {
+          "answer": "§25b",
+          "target": "default"
+        },
+        "40": {
+          "answer": "§28",
+          "target": "default"
+        },
+        "41": {
+          "answer": "§30",
+          "target": "default"
+        },
+        "42": {
+          "answer": "§31",
+          "target": "default"
+        },
+        "43": {
+          "answer": "§32",
+          "target": "default"
+        },
+        "44": {
+          "answer": "§33",
+          "target": "default"
+        },
+        "45": {
+          "answer": "§34",
+          "target": "default"
+        },
+        "46": {
+          "answer": "§36",
+          "target": "default"
+        },
+        "47": {
+          "answer": "§37",
+          "target": "default"
+        },
+        "48": {
+          "answer": "§38",
+          "target": "default"
+        },
+        "49": {
+          "answer": "§38a",
+          "target": "default"
+        },
+        "50": {
+          "answer": "§104c",
+          "target": "end"
+        },
+        "51": {
+          "answer": "Duldung",
+          "target": "end"
+        },
+        "52": {
+          "answer": "Fiktionsbescheinigung",
+          "target": "end"
+        }
+      }
+    },
+    "15": {
+      "question": "Seit wann haben sie ihren Aufenthaltstitel ?",
+      "target": "default",
+      "answers": {
+        "1": {
+          "answer": "Vor 2016",
+          "target": "default"
+        },
+        "2": {
+          "answer": "2016",
+          "target": "default"
+        },
+        "3": {
+          "answer": "2017",
+          "target": "default"
+        },
+        "4": {
+          "answer": "2018",
+          "target": "default"
+        },
+        "5": {
+          "answer": "2019",
+          "target": "default"
+        },
+        "6": {
+          "answer": "2020",
+          "target": "default"
+        },
+        "7": {
+          "answer": "2021",
+          "target": "default"
+        },
+        "8": {
+          "answer": "2022",
+          "target": "default"
+        },
+        "9": {
+          "answer": "2023",
+          "target": "default"
+        },
+        "10": {
+          "answer": "2024",
+          "target": "default"
+        },
+        "11": {
+          "answer": "2025",
+          "target": "default"
+        }
+      }
+    },
+    "16": {
+      "question": "Wie alt waren Sie als Sie nach Deutschland gekommen sind?",
+      "target": "default",
+      "answers": {
+        "1": {
+          "answer": "Unter 18 (Minderjährig)",
+          "target": "default"
+        },
+        "2": {
+          "answer": "Über 18 (Erwachsen/ Volljährig)",
+          "target": "default"
+        }
+      }
+    },
+    "17": {
+      "question": "Wie viele Rentenbeiträge haben Sie in die deutsche Rentenkasse eingezahlt?",
+      "target": "default",
+      "answers": {
+        "1": {
+          "answer": "0-12 Monate",
+          "target": "default"
+        },
+        "2": {
+          "answer": "12-24 Monate",
+          "target": "default"
+        },
+        "3": {
+          "answer": "24-36 Monate",
+          "target": "default"
+        },
+        "4": {
+          "answer": "36-48 Monate",
+          "target": "default"
+        },
+        "5": {
+          "answer": "48-60 Monate",
+          "target": "default"
+        },
+        "6": {
+          "answer": "Über 60 Monate",
+          "target": "default"
+        }
+      }
+    },
+    "18": {
+      "question": "Sind Sie gerade in einem Ausbildungsverhältnis?",
+      "target": "default",
+      "answers": {
+        "1": {
+          "answer": "Schule",
+          "target": "default"
+        },
+        "2": {
+          "answer": "Ausbildung",
+          "target": "default"
+        },
+        "3": {
+          "answer": "Studium",
+          "target": "default"
+        },
+        "4": {
+          "answer": "Nein",
+          "target": "default"
+        }
+      }
+    },
+    "19": {
+      "question": "Haben Sie bereits einen Antrag auf Einbürgerung gestellt?",
+      "target": "default",
+      "answers": {
+        "1": {
+          "answer": "Ja",
+          "target": "default"
+        },
+        "2": {
+          "answer": "Nein",
+          "target": "default"
+        },
+        "3": {
+          "answer": "Ich Weiß es nicht",
+          "target": "default"
+        }
+      }
+    },
+    "20": {
+      "question": "Möchten Sie eine kostenlose Beratung?",
+      "target": "default",
+      "answers": {
+        "1": {
+          "answer": "Ja",
+          "target": "default"
+        },
+        "2": {
+          "answer": "Nein",
+          "target": "default"
+        }
+      }
+    }
+  },
+  "end": {
+    "title": "Ihre Voraussetzungen ",
+    "discription": " Ergebnis ansehen\n100% kostenfrei\n",
+    "email": ""
+  }
+}
