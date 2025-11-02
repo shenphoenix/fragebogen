@@ -111,7 +111,7 @@ function show_next() {
   // selected radio in current question?
   const selected = current.querySelector("input[type='radio']:checked");
   if (!selected) {
-    alert("Bitte w�hlen Sie eine Antwort, bevor Sie fortfahren.");
+    alert("Bitte wählen Sie eine Antwort, bevor Sie fortfahren.");
     return;
   }
 
@@ -157,7 +157,7 @@ currentnav.classList.remove("current");
       const n = Number(target);
       if (!Number.isNaN(n)) {
         // prefer 1-based indexes (1..items.length). If out of range, try 0-based.
-        let idx = n - 1; // 1-based → 0-based
+        let idx = n - 1; // 1-based â†’ 0-based
         if (idx < 0 || idx >= items.length) idx = n; // fallback: maybe it was 0-based
         if (idx >= 0 && idx < items.length){ nextEl = items[idx];nextnav=navitems[idx]; 	}
       }
@@ -237,14 +237,14 @@ async function send_email() {
   const tel = document.getElementById("tel").value.trim();
 
   if (!email || !vorname || !nachname || !tel) {
-    alert("Bitte füllen Sie alle Felder aus.");
+    alert("Bitte fÃ¼llen Sie alle Felder aus.");
     return;
   }
 
   // validate email format
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email)) {
-    alert("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
+    alert("Bitte geben Sie eine gÃ¼ltige E-Mail-Adresse ein.");
     return;
   }
 
@@ -257,11 +257,11 @@ async function send_email() {
     const selected = q.querySelector("input[type='radio']:checked");
     const answer = selected ? selected.value : "(keine Antwort)";
 if(selected)
-    message += `${idx + 1}. ${title}\n   ➤ Antwort: ${answer}\n\n`;
+    message += `${idx + 1}. ${title}\n   âž¤ Antwort: ${answer}\n\n`;
   });
 
   // add user info
-  message += "👤 Teilnehmerdaten:\n";
+  message += "ðŸ‘¤ Teilnehmerdaten:\n";
   message += `Name: ${vorname} ${nachname}\n`;
   message += `E-Mail: ${email}\n`;
   message += `Telefon: ${tel}\n`;
@@ -295,3 +295,12 @@ if(selected)
 
 	
 json_initialising(jsonfile);
+// Auto-Resize nach außen senden
+function sendHeight() {
+  const height = document.body.scrollHeight;
+  window.parent.postMessage({ type: "resizeFragebogen", height }, "*");
+}
+
+// Beim Laden und nach Änderungen neu senden
+window.addEventListener("load", sendHeight);
+new ResizeObserver(sendHeight).observe(document.body);
