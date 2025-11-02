@@ -1,0 +1,204 @@
+:root, :host, .spxThemeOverride, .max-width-container, #root {
+	--color_0: 255, 255, 255;
+	--color_1: 255, 255, 255;
+	--color_2: 0, 0, 0;
+	--color_3: 237, 28, 36;
+	--color_4: 0, 136, 203;
+	--color_5: 255, 203, 5;
+	--color_6: 114, 114, 114;
+	--color_7: 176, 176, 176;
+	--color_8: 255, 255, 255;
+	--color_9: 114, 114, 114;
+	--color_10: 176, 176, 176;
+	--color_11: 255, 255, 255;
+	--color_12: 221, 221, 221;
+	--color_13: 160, 160, 160;
+	--color_14: 85, 85, 85;
+	--color_15: 0, 0, 0;
+	--color_16: 234, 244, 246;
+	--color_17: 131, 183, 230;
+	--color_18: 55, 125, 189;
+	--color_19: 15, 76, 133;
+	--color_20: 0, 48, 91;
+	--color_21: 183, 230, 235;
+	--color_22: 144, 209, 216;
+	--color_23: 65, 183, 196;
+	--color_24: 43, 122, 131;
+	--color_25: 22, 61, 65;
+	--color_26: 214, 241, 175;
+	--color_27: 188, 228, 133;
+	--color_28: 140, 214, 36;
+	--color_29: 93, 143, 24;
+	--color_30: 47, 71, 12;
+	--color_31: 184, 215, 252;
+	--color_32: 149, 194, 250;
+	--color_33: 47, 137, 247;
+	--color_34: 31, 91, 165;
+	--color_35: 16, 46, 82;
+	--color_36: 255, 255, 255;
+	--color_37: 0, 0, 0;
+	--color_38: 221, 221, 221;
+	--color_39: 160, 160, 160;
+	--color_40: 85, 85, 85;
+	--color_41: 55, 125, 189;
+	--color_42: 65, 183, 196;
+	--color_43: 0, 48, 91;
+	--color_44: 131, 183, 230;
+	--color_45: 0, 0, 0;
+	--color_46: 0, 0, 0;
+	--color_47: 85, 85, 85;
+	--color_48: 55, 125, 189;
+	--color_49: 55, 125, 189;
+	--color_50: 255, 255, 255;
+	--color_51: 255, 255, 255;
+	--color_52: 55, 125, 189;
+	--color_53: 55, 125, 189;
+	--color_54: 160, 160, 160;
+	--color_55: 160, 160, 160;
+	--color_56: 255, 255, 255;
+	--color_57: 255, 255, 255;
+	--color_58: 55, 125, 189;
+	--color_59: 55, 125, 189;
+	--color_60: 55, 125, 189;
+	--color_61: 55, 125, 189;
+	--color_62: 255, 255, 255;
+	--color_63: 255, 255, 255;
+	--color_64: 160, 160, 160;
+	--color_65: 160, 160, 160;
+	--font_0: normal normal normal 22px / 1.4em 'noticia text', serif;
+	--font_1: normal normal normal 13px / 1.4em raleway, sans-serif;
+	--font_2: normal normal normal 42px / 1.4em raleway, sans-serif;
+	--font_3: normal normal normal 60px / 1.4em raleway, sans-serif;
+	--font_4: normal normal normal 40px / 1.4em raleway, sans-serif;
+	--font_5: normal normal normal 30px / 1.4em raleway, sans-serif;
+	--font_6: normal normal normal 20px / 1.4em 'open sans', sans-serif;
+	--font_7: normal normal normal 18px / 1.4em 'open sans', sans-serif;
+	--font_8: normal normal normal 16px / 1.4em 'open sans', sans-serif;
+	--font_9: normal normal normal 14px / 1.4em 'open sans', sans-serif;
+	--font_10: normal normal normal 12px / 1.4em 'open sans', sans-serif;
+}
+body{background-color:var(--container-corvid-background-color,rgba(var(--bg,var(--color_11,color_11)),var(--alpha-bg,1)));}
+#fragebogen {max-width: 900px;margin: auto;background: white;padding: 15px}
+
+#fb_title {font: var(--font_2);  color: rgb(var(--color_20));}
+.question_title{font: var(--font_5);  color: rgb(var(--color_20));}
+#nav_qa_wrap{padding: 0;
+  display: flex;
+  list-style: none;
+	border: 1px solid #00000054;
+  border-radius: 10px;
+  height: 5px;
+}
+#nav_qa_wrap.end{
+	background: #83b7e6;
+	border-color: #00000054;
+	height: 7px;
+}
+
+#nav_qa_wrap li{
+	margin: -1px -2px;
+  	width: 100%;
+	text-align: center;
+	height: auto;
+	display: flex;
+	z-index: 1;
+	
+	position: relative;
+}
+
+#nav_qa_wrap.end li{
+	margin: 0px -2px;
+	
+}
+#nav_qa_wrap li.active:first-child .nav_bg,
+#nav_qa_wrap li:first-child{  border-radius: 10px 0 0 10px;border-left-width: 1px;}
+
+#nav_qa_wrap li.active:last-child .nav_bg,
+#nav_qa_wrap li:last-child{  border-radius: 0 10px 10px 0;border-right-width: 1px;}
+#nav_qa_wrap li span.nav_circle{
+	display: block;
+  width: 13px;
+  height: 13px;
+  border-radius: 100%;
+  right: 0;
+  z-index: 10;
+  background: #83b7e6;
+  position: absolute;
+  top: -4px;
+  left: 0;
+  margin: auto;
+  border: 1;
+  border: solid 1px #00000054; }
+
+/*#nav_qa_wrap li.active{border-left: 1px solid;}
+#nav_qa_wrap li.active:first-child{border-left: none;}*/
+#nav_qa_wrap li.active .nav_bg{position: absolute; top:-1px; bottom: -1px;left: 0;right: 0;}
+#nav_qa_wrap li.active .nav_bg,
+#nav_qa_wrap li.current span.nav_circle{
+	border: solid 1px #00000054;
+  background: #83b7e6;
+  cursor: pointer;
+  border-left: 0;
+  border-right: 0;
+}
+
+#nav_qa_wrap li.current span.nav_circle{
+	width: 16px;
+  height: 16px;
+top: -5px;
+}
+#nav_qa_wrap li.current .nav_bg{right: 50%;}
+
+#nav_qa_wrap.end li.active .nav_bg{ top:0px; bottom: 0px;border: none;}
+#nav_qa_wrap.end li.active .nav_bg{}
+#nav_qa_wrap li.deactive{
+	visibility: hidden;
+}
+#nav_qa_wrap li.nav_qa_end span.nav_circle{
+	display: none;
+}
+#nav_qa_wrap li.nav_qa_end.current span.nav_bg{right: 0;}
+#nav_qa_wrap li.nav_qa_end.current span.nav_circle{
+	display: block;
+	left: auto;
+}
+
+#question_wrap{text-align: left;}
+#question_wrap .question_item{display: none;}
+#question_wrap .question_item.show{display: block;}
+
+#question_wrap .question_item ul {padding: 0;
+  max-height: 300px;
+  overflow: auto;}
+
+#question_wrap .question_item li{list-style: none;margin: 5px 0;
+  font: var(--font_6);
+  color: rgb(var(--color_20));
+  letter-spacing: 0em;}
+
+#question_wrap .question_item li label{width: 100%;cursor: pointer;display: block;}
+#question_next {  transition: opacity 0.3s;}
+#question_next[style*="none"] {
+  opacity: 0;
+}
+#end_wrap{max-width: 500px;margin: auto;padding: 20px;}
+#end_input_wrap label.email_label,
+#end_input_wrap label.name_label,
+#end_input_wrap label.tel_label{margin: 10px 0; display: grid;grid-template-columns: 60px auto;grid-gap: 20px;max-width: calc(100% - 10px)}
+#end_input_wrap label.name_label{grid-template-columns: 60px auto auto}
+#end_input_wrap label input{width: 100%;}
+#end_input_wrap label span{width: 100px;}
+#question_next {
+	background-color: var(--corvid-background-color, rgba(var(--bg, var(--color_17, color_17)), var(--alpha-bg, 1)));
+	border: solid var(--corvid-border-color, rgba(var(--brd, var(--color_15, color_15)), var(--alpha-brd, 1))) var(--corvid-border-width, var(--brw, 0));
+	cursor: pointer;
+	align-items: center;
+	box-sizing: border-box;
+	text-align: center;
+	width: -moz-max-content;
+	width: max-content;
+	color: var(--corvid-color, rgb(var(--txt, var(--color_15, color_15))));
+	font: var(--fnt, var(--font_5));
+	margin: 0;
+	width: 100%;
+}
