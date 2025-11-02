@@ -266,7 +266,7 @@ if(selected)
   message += `E-Mail: ${email}\n`;
   message += `Telefon: ${tel}\n`;
 
-  console.log("Gesendete Nachricht:\n" + message);
+
 	// im iFrame
 	window.parent.postMessage({
 	  type: 'fragebogenSubmit',
@@ -285,4 +285,5 @@ function sendHeight() {
 // Beim Laden und nach Änderungen neu senden
 window.addEventListener("load", sendHeight);
 new ResizeObserver(sendHeight).observe(document.body);
+
 
