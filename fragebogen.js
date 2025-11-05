@@ -257,15 +257,15 @@ async function send_email() {
     const selected = q.querySelector("input[type='radio']:checked");
     const answer = selected ? selected.value : "(keine Antwort)";
 if(selected)
-    message += `${idx + 1}. ${title}\n   âž¤ Antwort: ${answer}\n\n`;
+    message += `${idx + 1}. ${title}\n Antwort: ${answer}\n\n`;
   });
 
   // add user info
-  message += "ðŸ‘¤ Teilnehmerdaten:\n";
+  message += "Teilnehmerdaten:\n";
   message += `Name: ${vorname} ${nachname}\n`;
   message += `E-Mail: ${email}\n`;
   message += `Telefon: ${tel}\n`;
-
+console.log(message);
 	// ... nachdem du message zusammengebaut hast:
 window.parent.postMessage({
   type: 'fragebogenSubmit',
@@ -309,6 +309,7 @@ function sendHeight() {
 // Beim Laden und nach Änderungen neu senden
 window.addEventListener("load", sendHeight);
 new ResizeObserver(sendHeight).observe(document.body);
+
 
 
 
