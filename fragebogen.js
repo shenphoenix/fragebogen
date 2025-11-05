@@ -266,23 +266,36 @@ if(selected)
   message += `E-Mail: ${email}\n`;
   message += `Telefon: ${tel}\n`;
 
+	// ... nachdem du message zusammengebaut hast:
+window.parent.postMessage({
+  type: 'fragebogenSubmit',
+  payload: { email, vorname, nachname, tel, message }
+}, '*');
 
-	// im iFrame
-	window.parent.postMessage({
-	  type: 'fragebogenSubmit',
-	  payload: { email, vorname, nachname, tel, message /* zusammengebaut wie gehabt */ }
-	}, '*');
-	// optional auf Ergebnis warten
+// optional: Ergebnis anzeigen
 window.addEventListener('message', (e) => {
   if (e.data?.type === 'sendResult') {
     if (e.data.ok) {
-      alert('E-Mail wurde erfolgreich versendet!');
+      alert(e.data.action === 'updated' ? 'Lead aktualisiert.' : 'Lead erstellt.');
     } else {
-      alert('Senden fehlgeschlagen: ' + (e.data.errorCode || 'Unbekannter Fehler'));
-      console.log('Details:', e.data);
+      // aussagekräftige Meldungen je nach Code
+      const code = e.data.code || e.data.error || e.data.step || 'UNBEKANNT';
+      const map = {
+        SYNTAX: 'Bitte eine gültige E-Mail-Adresse eingeben.',
+        ROLE: 'Rollen-Adressen (info@, support@, …) sind nicht erlaubt.',
+        DISPOSABLE: 'Wegwerf-E-Mail-Adressen sind nicht erlaubt.',
+        NO_MX: 'Die Domain der E-Mail hat keine gültigen Mail-Einträge.',
+        TOKEN: 'Zoho-Authentifizierung fehlgeschlagen.',
+        UPSERT: 'Zoho konnte den Lead nicht speichern.'
+      };
+      alert(map[code] || 'Es ist ein Fehler aufgetreten.');
+      console.log('Details:', e.data.details || '');
     }
   }
-});
+}, { once: true });
+
+
+
 }
 
 	
@@ -296,6 +309,7 @@ function sendHeight() {
 // Beim Laden und nach Änderungen neu senden
 window.addEventListener("load", sendHeight);
 new ResizeObserver(sendHeight).observe(document.body);
+
 
 
 
