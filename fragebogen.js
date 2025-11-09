@@ -1,3 +1,4 @@
+
 const   jsonfile=document.currentScript.getAttribute("data");
 const fragebogen_id="fragebogen";
 const create_element = function(element = "div", attr = {}, text = "") {
@@ -86,7 +87,8 @@ function loadFromJSON(json) {
 	const endsendemail=create_element("button",{id:"sendemail",type:"button",onclick:"send_email()"},"abschicken");
 	qend.append(endTitle,endText,endinputwrap,endsendemail);
 	
-	fragebogenwrap.appendChild( qend);
+	const successwrap=create_element("div",{id:"successwrap",style:"display:none;"},"<p>Vielen dank fürs ausfüllen des Konstenlosen testen. Wir werden es so schnell wie möglich bearbeiten.</p>");
+	fragebogenwrap.append( qend,successwrap);
 	 const nextBtn = document.getElementById("question_next");
 	  // add change listener for radios in the shown question
   const newRadios =fragebogenwrap.querySelectorAll("input[type='radio']");
@@ -260,6 +262,7 @@ if(selected)
     message += `${idx + 1}. ${title}\n Antwort: ${answer}\n\n`;
   });
 
+
 	// ... nachdem du message zusammengebaut hast:
 window.parent.postMessage({
   type: 'fragebogenSubmit',
@@ -270,7 +273,7 @@ window.parent.postMessage({
 window.addEventListener('message', (e) => {
   if (e.data?.type === 'sendResult') {
     if (e.data.ok) {
-      alert(e.data.action === 'updated' ? 'Lead aktualisiert.' : 'Lead erstellt.');
+        success_call();
     } else {
       // aussagekräftige Meldungen je nach Code
       const code = e.data.code || e.data.error || e.data.step || 'UNBEKANNT';
@@ -292,6 +295,14 @@ window.addEventListener('message', (e) => {
 
 }
 
+function success_call(){
+  const success_element=document.getElementById("successwrap");
+  document.getElementById("nav_qa_wrap").style.display="none";
+  
+  document.getElementById("end_wrap").style.display="none";
+  success_element.style.display="block";
+
+}
 	
 json_initialising(jsonfile);
 // Auto-Resize nach außen senden
