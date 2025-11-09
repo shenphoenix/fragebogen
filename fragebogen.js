@@ -113,7 +113,7 @@ function show_next() {
   // selected radio in current question?
   const selected = current.querySelector("input[type='radio']:checked");
   if (!selected) {
-    alert("Bitte wählen Sie eine Antwort, bevor Sie fortfahren.");
+    alert_call("Bitte wählen Sie eine Antwort, bevor Sie fortfahren.","info");
     return;
   }
 
@@ -239,14 +239,14 @@ async function send_email() {
   const tel = document.getElementById("tel").value.trim();
 
   if (!email || !vorname || !nachname || !tel) {
-    alert("Bitte fÃ¼llen Sie alle Felder aus.");
+    alert_call("Bitte füllen Sie alle Felder aus.","info");
     return;
   }
 
   // validate email format
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email)) {
-    alert("Bitte geben Sie eine gÃ¼ltige E-Mail-Adresse ein.");
+    alert_call("Bitte geben Sie eine gültige E-Mail-Adresse ein.","info");
     return;
   }
 
@@ -262,7 +262,7 @@ if(selected)
     message += `${idx + 1}. ${title}\n Antwort: ${answer}\n\n`;
   });
 
-
+ 
 	// ... nachdem du message zusammengebaut hast:
 window.parent.postMessage({
   type: 'fragebogenSubmit',
@@ -273,7 +273,7 @@ window.parent.postMessage({
 window.addEventListener('message', (e) => {
   if (e.data?.type === 'sendResult') {
     if (e.data.ok) {
-        success_call();
+      success_call();
     } else {
       // aussagekräftige Meldungen je nach Code
       const code = e.data.code || e.data.error || e.data.step || 'UNBEKANNT';
@@ -285,7 +285,7 @@ window.addEventListener('message', (e) => {
         TOKEN: 'Zoho-Authentifizierung fehlgeschlagen.',
         UPSERT: 'Zoho konnte den Lead nicht speichern.'
       };
-      alert(map[code] || 'Es ist ein Fehler aufgetreten.');
+      alert_call(map[code] || 'Es ist ein Fehler aufgetreten.');
       console.log('Details:', e.data.details || '');
     }
   }
@@ -303,7 +303,71 @@ function success_call(){
   success_element.style.display="block";
 
 }
-	
+
+function alert_call(message = "Ein unbekannter Hinweis", type = "error") {
+  const colors = {
+    success: "rgba(40, 167, 69, 0.95)",  // grün
+    error: "rgba(220, 53, 69, 0.95)",    // rot
+    info: "rgba(23, 162, 184, 0.95)"     // blau
+  }
+  const fragebogenwrap = document.getElementById(fragebogen_id);
+  if (!fragebogenwrap) {
+    console.warn("❗ fragebogenwrap not found");
+    return;
+  }
+
+ 
+  // Prüfen, ob das Alert-Div bereits existiert
+  let alertBox = document.getElementById("alert");
+    if (!alertBox) {
+    alertBox = document.createElement("div");
+    alertBox.id = "alert";
+    fragebogenwrap.appendChild(alertBox);
+  }
+ 
+ const color = colors[type] || colors.error;
+
+  alertBox.style.cssText = `
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: ${color};             
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 16px;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    display: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    max-width: 80%;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+    font-family: system-ui, sans-serif;
+    pointer-events: none;
+  `;
+
+  // Text dynamisch setzen
+  alertBox.innerText = message;
+
+  // Einblenden
+  alertBox.style.display = "block";
+  setTimeout(() => {
+    alertBox.style.opacity = "1";
+  }, 10);
+
+  // Nach 3 Sekunden wieder ausblenden
+  setTimeout(() => {
+    alertBox.style.opacity = "0";
+    setTimeout(() => {
+      alertBox.style.display = "none";
+    }, 300);
+  }, 3000);
+}
+
+
 json_initialising(jsonfile);
 // Auto-Resize nach außen senden
 function sendHeight() {
