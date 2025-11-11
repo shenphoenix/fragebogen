@@ -163,7 +163,10 @@ top: -5px;
 	left: auto;
 }
 
-#question_wrap{text-align: left;}
+#question_wrap{
+	text-align: left;  
+	padding: 0;
+	  margin: 0 10px 15px;}
 #question_wrap .question_item{display: none;}
 #question_wrap .question_item.show{display: block;}
 
@@ -201,4 +204,11 @@ top: -5px;
 	font: var(--fnt, var(--font_5));
 	margin: 0;
 	width: 100%;
+}
+@media screen and (max-width: 413px) {
+#fb_title {
+     font-size: 1.5em;
+}
+.question_title{font-size:1.3em ;}
+#question_wrap .question_item li{font-size: 1.2em;}
 }
