@@ -298,8 +298,10 @@ window.addEventListener('message', (e) => {
 function success_call(){
   const success_element=document.getElementById("successwrap");
   document.getElementById("nav_qa_wrap").style.display="none";
+  
   document.getElementById("end_wrap").style.display="none";
   success_element.style.display="block";
+
 }
 
 function alert_call(message = "Ein unbekannter Hinweis", type = "error") {
@@ -367,6 +369,15 @@ function alert_call(message = "Ein unbekannter Hinweis", type = "error") {
 
 
 json_initialising(jsonfile);
+// Auto-Resize nach außen senden
+function sendHeight() {
+  const height = document.body.scrollHeight;
+  window.parent.postMessage({ type: "resizeFragebogen", height }, "*");
+}
+
+// Beim Laden und nach Änderungen neu senden
+window.addEventListener("load", sendHeight);
+new ResizeObserver(sendHeight).observe(document.body);
 
 
 
