@@ -1,4 +1,3 @@
-
 const   jsonfile=document.currentScript.getAttribute("data");
 const fragebogen_id="fragebogen";
 const create_element = function(element = "div", attr = {}, text = "") {
@@ -92,11 +91,30 @@ function loadFromJSON(json) {
 	 const nextBtn = document.getElementById("question_next");
 	  // add change listener for radios in the shown question
   const newRadios =fragebogenwrap.querySelectorAll("input[type='radio']");
-  newRadios.forEach(radio => {
-    radio.addEventListener("change", () => {
-      nextBtn.style.display = "inline-block"; // show again
-    }, { once: true }); // only fire once per question
-  });
+
+if (newRadios.length) {
+    newRadios.forEach(radio => {
+        radio.addEventListener("change", () => {
+
+            //  1. Alle answer_item-Boxen der aktuellen Frage zurücksetzen
+            fragebogenwrap.querySelectorAll(".answer_item.current")
+                  .forEach(li => li.classList.remove("current"));
+
+            // 2. Die Parent-Box des ausgewählten Radios markieren
+            const parentLi = radio.closest(".answer_item");
+            if (parentLi) {
+              console.log(parentLi);
+                parentLi.classList.add("current");
+            }
+
+            //  3. Weiter-Button einblenden
+            nextBtn.style.display = "inline-block";
+
+        }, { once: false });   // ⬅️ wichtig: NICHT once:true → sonst bei Auswahlwechsel kein Update!
+    });
+} else {
+    nextBtn.style.display = "inline-block";
+}
 }
 
 function show_next() {
@@ -183,18 +201,8 @@ currentnav.classList.remove("current");
   // hide Next button until a radio in the new question is selected
   nextBtn.style.display = "none";
 
-  // when any radio in the new question changes, show the button again
-  const newRadios = nextEl.querySelectorAll("input[type='radio']");
-  if (newRadios.length) {
-    newRadios.forEach(radio => {
-      radio.addEventListener("change", () => {
-        nextBtn.style.display = "inline-block";
-      }, { once: true });
-    });
-  } else {
-    // no radios? keep Next visible
-    nextBtn.style.display = "inline-block";
-  }
+
+
 }
 
 
@@ -378,6 +386,7 @@ function sendHeight() {
 // Beim Laden und nach Änderungen neu senden
 window.addEventListener("load", sendHeight);
 new ResizeObserver(sendHeight).observe(document.body);
+
 
 
 
