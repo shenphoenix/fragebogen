@@ -86,7 +86,7 @@ function loadFromJSON(json) {
 	const endsendemail=create_element("button",{id:"sendemail",type:"button",onclick:"send_email()"},"abschicken");
 	qend.append(endTitle,endText,endinputwrap,endsendemail);
 	
-	const successwrap=create_element("div",{id:"successwrap",style:"display:none;"},"<p>Vielen dank fürs ausfüllen des Konstenlosen testen. Wir werden es so schnell wie möglich bearbeiten.</p>");
+	const successwrap=create_element("div",{id:"successwrap",style:"display:none;"},"<p>Vielen Dank, dass Sie unseren kostenlosen Test ausgefüllt haben. <br>Wir werden Ihre Angaben so schnell wie möglich bearbeiten.</p>");
 	fragebogenwrap.append( qend,successwrap);
 	 const nextBtn = document.getElementById("question_next");
 	  // add change listener for radios in the shown question
@@ -386,3 +386,4 @@ function sendHeight() {
 // Beim Laden und nach Änderungen neu senden
 window.addEventListener("load", sendHeight);
 new ResizeObserver(sendHeight).observe(document.body);
+
